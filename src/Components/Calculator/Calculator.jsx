@@ -87,7 +87,7 @@ const Calculator = () => {
           .map((item, idx) =>
             item.calculate === Infinity ? (
               <div>
-                <p>divide by zero error.</p>
+                <li key={idx}>divide by zero error.</li>
               </div>
             ) : (
               <li key={idx}>
