@@ -26,15 +26,19 @@ const Calculator = () => {
         break;
     }
 
-    const obj = {
-      time: Date.now(),
-      username,
-      number1,
-      number2,
-      calculate,
-      operator,
-    };
-    setResultList([...resultList, obj]);
+    if (calculate !== null) {
+      const obj = {
+        time: Date.now(),
+        username,
+        number1,
+        number2,
+        calculate,
+        operator,
+      };
+      setResultList([...resultList, obj]);
+    } else {
+      alert("Enter valid operation ( +, -, *, / )");
+    }
   };
 
   return (
@@ -81,12 +85,9 @@ const Calculator = () => {
           .sort((a, b) => b.time - a.time)
           .slice(0, 9)
           .map((item, idx) =>
-            item.calculate === null || item.calculate === Infinity ? (
+            item.calculate === Infinity ? (
               <div>
-                <p>
-                  Currently supported operations are ( +, -, *, / ) and check
-                  for divide by zero erros.
-                </p>
+                <p>divide by zero error.</p>
               </div>
             ) : (
               <li key={idx}>
