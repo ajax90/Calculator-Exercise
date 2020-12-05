@@ -24,7 +24,7 @@ This project is mantained by:
 
 ### How to run the project in your local machine
 
-- `git clone https://github.com/zero-to-mastery/ZtM-Job-Board.git`
+- `git clone https://github.com/ajax90/Calculator-Exercise.git
 
 - `yarn install` or `npm install`
 
