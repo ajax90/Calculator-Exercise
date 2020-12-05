@@ -1,11 +1,11 @@
 import React from "react";
 
-const FormInput = ({ register, error, label, id, ...inputProps }) => {
+const FormInput = ({ register, error, label, id, type, ...inputProps }) => {
   return (
     <>
       <label htmlFor={id}>{label}</label>
-      <input ref={register} id={id} {...inputProps} />
-      {error && <div>{error.message}</div>}
+      <input ref={register} id={id} {...inputProps} type={type} />
+      {error && <div>{label} required</div>}
     </>
   );
 };

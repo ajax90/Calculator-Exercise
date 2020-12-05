@@ -10,18 +10,19 @@ const Calculator = () => {
     let calculate = 0;
     switch (operator) {
       case "+":
-        calculate = parseInt(number1) + parseInt(number2);
+        calculate = Number(number1) + Number(number2);
         break;
       case "-":
-        calculate = parseInt(number1) - parseInt(number2);
+        calculate = Number(number1) - Number(number2);
         break;
       case "*":
-        calculate = parseInt(number1) * parseInt(number2);
+        calculate = Number(number1) * Number(number2);
         break;
       case "/":
-        calculate = parseInt(number1) / parseInt(number2);
+        calculate = Number(number1) / Number(number2);
         break;
       default:
+        calculate = null;
         break;
     }
 
@@ -40,35 +41,35 @@ const Calculator = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormInput
-          type="username"
+          type="text"
           name="username"
           id="username"
-          label="username"
-          register={register}
+          label="Username"
+          register={register({ required: true, maxLength: 20 })}
           error={errors.username}
         />
         <FormInput
-          type="number1"
+          type="number"
           name="number1"
           id="number1"
-          label="number1"
-          register={register}
+          label="Number 1"
+          register={register({ required: true })}
           error={errors.number1}
         />
         <FormInput
-          type="operator"
+          type="text"
           name="operator"
           id="operator"
-          label="operator"
-          register={register}
+          label="Operation"
+          register={register({ required: true })}
           error={errors.operator}
         />
         <FormInput
-          type="number2"
+          type="number"
           name="number2"
           id="number2"
-          label="number2"
-          register={register}
+          label="Number 2"
+          register={register({ required: true })}
           error={errors.number2}
         />
 
@@ -79,12 +80,21 @@ const Calculator = () => {
         {resultList
           .sort((a, b) => b.time - a.time)
           .slice(0, 9)
-          .map((item, idx) => (
-            <li key={idx}>
-              {item.username} : {item.number1} {item.operator} {item.number2} ={" "}
-              {item.calculate}
-            </li>
-          ))}
+          .map((item, idx) =>
+            item.calculate === null || item.calculate === Infinity ? (
+              <div>
+                <p>
+                  Currently supported operations are ( +, -, *, / ) and check
+                  for divide by zero erros.
+                </p>
+              </div>
+            ) : (
+              <li key={idx}>
+                {item.username} : {item.number1} {item.operator} {item.number2}{" "}
+                = {item.calculate}
+              </li>
+            )
+          )}
       </ul>
     </div>
   );
