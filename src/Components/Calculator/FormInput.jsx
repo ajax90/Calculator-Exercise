@@ -4,7 +4,7 @@ const FormInput = ({ register, error, label, id, type, ...inputProps }) => {
   return (
     <>
       <label htmlFor={id}>{label}</label>
-      <input ref={register} id={id} {...inputProps} type={type} />
+      <input ref={register} id={id} type={type} {...inputProps} />
       {error && <div>{label} required</div>}
     </>
   );

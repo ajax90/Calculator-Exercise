@@ -53,11 +53,11 @@ const Calculator = () => {
           error={errors.username}
         />
         <FormInput
-          type="number"
+          type="text"
           name="number1"
           id="number1"
           label="Number 1"
-          register={register({ required: true })}
+          register={register({ required: true, pattern: /^[0-9]\d*(\.\d+)?$/ })}
           error={errors.number1}
         />
         <FormInput
@@ -65,15 +65,15 @@ const Calculator = () => {
           name="operator"
           id="operator"
           label="Operation"
-          register={register({ required: true })}
+          register={register({ required: true, pattern: /^(\+|-|\*|\/)$/ })}
           error={errors.operator}
         />
         <FormInput
-          type="number"
+          type="text"
           name="number2"
           id="number2"
           label="Number 2"
-          register={register({ required: true })}
+          register={register({ required: true, pattern: /^[0-9]\d*(\.\d+)?$/ })}
           error={errors.number2}
         />
 
@@ -102,3 +102,5 @@ const Calculator = () => {
 };
 
 export default Calculator;
+
+// regex for input were added later : Please check the github for timestamp
