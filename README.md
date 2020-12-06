@@ -1,3 +1,36 @@
+# Calculator Application
+
+Create a web app using any language which logs calculations as they happen and shares those calculations with everyone connected to the app.
+
+## Installation
+Clone this repository and import into **Visual Studio**
+```bash
+git clone git@github.com:ajax90/<reponame>.git
+```
+
+## Maintainers
+This project is mantained by:
+* [Chaitanya Deshpande](http://github.com/ajax90)
+
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push your branch (git push origin my-new-feature)
+5. Create a new Pull Request
+
+
+### How to run the project in your local machine
+
+- `git clone https://github.com/ajax90/Calculator-Exercise.git
+
+- `yarn install` or `npm install`
+
+- `yarn start` or `npm start`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
