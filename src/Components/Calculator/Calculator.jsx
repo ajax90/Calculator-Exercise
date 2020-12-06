@@ -65,7 +65,7 @@ const Calculator = () => {
           name="operator"
           id="operator"
           label="Operation"
-          register={register({ required: true, pattern: /^(\+|-|\*|\/)$/ })}
+          register={register({ required: true })}
           error={errors.operator}
         />
         <FormInput
